@@ -1,0 +1,9 @@
+src_dir= "/var/log"
+
+backup_dir="/backup/logs" #another location
+
+filename="log_backup_$(date +'%d/%m/%Y_%H:%M:%S').tar.gz"
+
+tar -cvfz $backup_dir/$filename $src_dir
+
+echo "backup completed: $filename"
