@@ -1,0 +1,8 @@
+#!/bin/bash
+TH=80
+usage=$(df -h /|awk '{print $5}'|sed 's/%//g'|tail -1)
+
+if [ $usage -gt $TH ]
+then
+echo "Disk usage is %usage%"|mail-s mohdjaved@gmail.com  ##requires mail setup
+fi
